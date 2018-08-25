@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Purchase";
+}
+
+
+@{
+    if (ViewBag.PizzaType.ToString() == "1")
+    {
+        <h3> You purchased BBQ Beef</h3>
+        <img src="~/images/bbq-pizza.jpg" width="100%" alt="ASP.NET" class="img-responsive" />
+        <h3>Total Price: $@ViewBag.Price.ToString()</h3>
+    }
+
+    if (ViewBag.PizzaType.ToString() == "2")
+    {
+        <h3> You purchased Chicken and Pineapple</h3>
+        <img src="~/images/pineapple-pizza.jpg" width="100%" alt="ASP.NET" class="img-responsive" />
+        <h3>Total Price: $@ViewBag.Price.ToString()</h3>
+    }
+
+    if (ViewBag.PizzaType.ToString() == "3")
+    {
+        <h3> You purchased Pepperoni Feast</h3>
+        <img src="~/images/pepperoni-pizza.jpg" width="100%" alt="ASP.NET" class="img-responsive" />
+        <h3>Total Price: $@ViewBag.Price.ToString()</h3>
+    }
+
+    if (ViewBag.PizzaType.ToString() == "4")
+    {
+        <h3> You purchased Vegetarian</h3>
+        <img src="~/images/vegetarian-pizza.jpg" width="100%" alt="ASP.NET" class="img-responsive" />
+        <h3>Total Price: $@ViewBag.Price.ToString()</h3>
+    }
+}
+

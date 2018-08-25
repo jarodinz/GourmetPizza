@@ -23,10 +23,35 @@ namespace GourmetPizza.Controllers
             if (PizzaType == 1)
             {   
                 double PizzaCost = 10.50;
-                //Now i need to times the cost by the amount of pizza then send it to the view. 
-                //add in message
-                //Pass the PizzaName and Cost through to the view.
+                double Price = PizzaCost * PizzaCount;
+                ViewBag.Price = Price;
+                ViewBag.PizzaType = PizzaType;
             }
+
+            if (PizzaType == 2)
+            {
+                double PizzaCost = 8.50;
+                double Price = PizzaCost * PizzaCount;
+                ViewBag.Price = Price;
+                ViewBag.PizzaType = PizzaType;
+            }
+
+            if (PizzaType == 3)
+            {
+                double PizzaCost = 9.00;
+                double Price = PizzaCost * PizzaCount;
+                ViewBag.Price = Price;
+                ViewBag.PizzaType = PizzaType;
+            }
+
+            if (PizzaType == 4)
+            {
+                double PizzaCost = 7.00;
+                double Price = PizzaCost * PizzaCount;
+                ViewBag.Price = Price;
+                ViewBag.PizzaType = PizzaType;
+            }
+
             return View();
         }
  

@@ -25,8 +25,12 @@ namespace GourmetPizza
         {
             services.AddMvc();
 
-            services.AddDbContext<GourmetPizzaContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("GourmetPizzaContext")));
+           // services.AddDbContext<GourmetPizzaContext>(options =>
+                    //options.UseSqlite("Data Source=PizzaShop.db"));
+            
+
+           services.AddDbContext<GourmetPizzaContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("GourmetPizzaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

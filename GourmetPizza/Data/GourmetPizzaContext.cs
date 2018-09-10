@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using GourmetPizza.Models;
 
 namespace GourmetPizza.Models
 {
@@ -14,5 +15,7 @@ namespace GourmetPizza.Models
         }
 
         public DbSet<GourmetPizza.Models.Pizza> Pizza { get; set; }
+
+        public DbSet<GourmetPizza.Models.Customer> Customer { get; set; }
     }
 }

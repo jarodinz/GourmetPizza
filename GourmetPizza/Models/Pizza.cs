@@ -9,10 +9,9 @@ namespace GourmetPizza.Models
     public class Pizza
     {
         public int ID { get; set; }
-        [Required(ErrorMessage="Each pizza must have a title")]
-        [RegularExpression(@"^[A-Z][0-9 a-z'-](1,20)$")]
-
         public string Name { get; set; }
         public double Price { get; set; }
     }
+
+   
 }

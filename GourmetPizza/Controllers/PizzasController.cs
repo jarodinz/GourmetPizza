@@ -24,6 +24,25 @@ namespace GourmetPizza.Controllers
             return View(await _context.Pizza.ToListAsync());
         }
 
+        // GET: Pizzas/Purchase
+        public IActionResult Purchase()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Purchase(PizzaPurchase pizzaPurchase)
+        {
+            if (ModelState.IsValid)
+            {
+                var Pizza = await _context.Pizza.SingleOrDefaultAsync(m => m.Name == pizzaPurchase.PizzaName);
+                ViewData["TotalPrice"] = Pizza.Price * pizzaPurchase.PizzaCount;
+                ViewData["CreditCard"] = pizzaPurchase.CreditCard;
+                return View("~/Views/Pizzas/PurchaseConfirm.cshtml", pizzaPurchase);
+            }
+            return View();
+        }
+
         // GET: Pizzas/Details/5
         public async Task<IActionResult> Details(int? id)
         {

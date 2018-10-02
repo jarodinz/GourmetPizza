@@ -16,11 +16,19 @@ namespace GourmetPizza.Models
         {
             _context = context;
         }
-
+        
         // GET: Customers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Customer.ToListAsync());
+            var customer = from c in _context.Customer
+                           select c;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                customer = customer.Where(s => s.GivenName.Contains(searchString) || s.FamilyName.Contains(searchString));
+            }
+
+            return View(await customer.ToListAsync());
         }
 
         // GET: Customers/Details/5
@@ -147,5 +155,7 @@ namespace GourmetPizza.Models
         {
             return _context.Customer.Any(e => e.ID == id);
         }
+
+    
     }
 }

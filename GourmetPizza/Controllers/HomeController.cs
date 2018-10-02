@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GourmetPizza.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GourmetPizza.Controllers
 {
@@ -33,5 +34,6 @@ namespace GourmetPizza.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+     
     }
 }

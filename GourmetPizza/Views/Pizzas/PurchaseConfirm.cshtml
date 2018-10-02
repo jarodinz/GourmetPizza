@@ -1,0 +1,18 @@
+﻿@model GourmetPizza.Models.PizzaPurchase
+
+@{
+    ViewData["Title"] = "Purchase Confirmation";
+}
+
+<h2>Purchase Confirmation</h2>
+
+<h4>
+    You have purchased <b>@Model.PizzaCount</b> Pizzas
+    for the Pizza <b>@Model.PizzaName</b>.
+</h4>
+
+<h4>The Total Price is: <b>$@ViewData["TotalPrice"]</b>.</h4>
+<h4>The Credit Card that wil be charged is <b>@ViewData["CreditCard"]</b>.</h4>
+
+<h4> <a asp-action="Index">Back to List</a>  </h4>
+
